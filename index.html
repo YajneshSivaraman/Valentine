@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicAesthetix — AI-Powered Creative Services, Expertly Curated</title>
+    <meta name="description" content="Discover curated AI-powered design and creative services for entrepreneurs, businesses, and meaningful gifts.">
+    <style>
+        :root {
+            --color-mocha: #4B3935;
+            --color-cream: #F0E7D5;
+            --color-white: #FFFFFF;
+            --color-text-primary: #2D2D2D;
+            --color-text-secondary: #666666;
+            --color-border: #E8DFD0;
+            --color-bg-light: #FDFBF9;
+            --color-accent-hover: #6B5344;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-light);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            color: var(--color-text-primary);
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-mocha);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--color-mocha);
+            color: var(--color-cream);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(75, 57, 53, 0.15);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-mocha);
+            border: 2px solid var(--color-mocha);
+            padding: 12px 30px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-cream);
+            box-shadow: 0 4px 12px rgba(75, 57, 53, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-mocha);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--color-text-primary);
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-mocha);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-cream) 100%);
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* TRUST SECTION */
+        .trust-section {
+            padding: 60px 20px;
+            background-color: var(--color-white);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .trust-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trust-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-primary);
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            padding: 80px 20px;
+            background-color: var(--color-bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            background-color: var(--color-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 12px 32px rgba(75, 57, 53, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-cream);
+            color: var(--color-mocha);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* FEATURED SERVICES */
+        .featured-services {
+            padding: 80px 20px;
+            background-color: var(--color-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 16px 40px rgba(75, 57, 53, 0.12);
+            transform: translateY(-6px);
+        }
+
+.service-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills card */
+}
+
+
+        .service-content {
+            padding: 1.75rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text-primary);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .service-link {
+            display: inline-block;
+            color: var(--color-mocha);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .service-link:hover {
+            border-bottom-color: var(--color-mocha);
+            transform: translateX(4px);
+        }
+
+        /* WHY LOVE THIS */
+        .why-love {
+            padding: 80px 20px;
+            background-color: var(--color-cream);
+        }
+
+        .why-love-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .why-love h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            color: var(--color-text-primary);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-mocha);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        /* VALENTINE'S SECTION */
+        .valentine-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(75, 57, 53, 0.05) 0%, rgba(240, 231, 213, 0.3) 100%);
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 12px;
+        }
+
+        .valentine-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .valentine-content h2 {
+            margin-bottom: 1rem;
+            color: var(--color-mocha);
+        }
+
+        .valentine-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* FINAL CTA SECTION */
+        .final-cta {
+            padding: 80px 20px;
+            background-color: var(--color-white);
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .final-cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--color-text-primary);
+            color: var(--color-cream);
+            padding: 3rem 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-cream);
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            color: rgba(240, 231, 213, 0.8);
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(240, 231, 213, 0.8);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-cream);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(240, 231, 213, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(240, 231, 213, 0.7);
+        }
+
+        /* Accessibility */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--color-mocha);
+            outline-offset: 2px;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .step-card,
+            .service-card {
+                margin-bottom: 1rem;
+            }
+
+            .trust-content p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .features-list li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">CosmicAesthetix</div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#valentine">Valentine's</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Beautiful Design, Thoughtfully Curated.</h1>
+                <p class="hero-subtitle">Discover AI-assisted branding, marketing visuals, and personalized creative gifts — curated for quality and intention. </p>
+
+                    <button class="btn" onclick="scrollToSection('services')">Explore Curated Services</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('valentine')">View Valentine's Gift Ideas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <p>CosmicAesthetix is a curated discovery space for high-quality AI-assisted creative services.  
+Each recommendation connects you to independent professionals offering branding, marketing visuals, and personalized digital gifts.
+</p>
+                <p class="disclaimer">CosmicAesthetix is an affiliate discovery platform. Services are provided by independent creators and professionals.
+</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Choose What You Need</h3>
+                    <p>Branding, logos, marketing visuals, or personalized gifts.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Explore Curated Services</h3>
+                    <p>Carefully curated creative services focused on quality, aesthetics, and results.
+</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Order Securely</h3>
+                    <p>Proceed securely through the service provider’s official platform.
+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="featured-services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Curated Services</h2>
+            </div>
+            <div class="services-grid">
+               
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image"> <img src="https://ik.imagekit.io/yajnesh/ricardo-moura-EqKJmR3697Y-unsplash%20(1).jpg?updatedAt=1768152141603" alt="AI Couple Portrait Inspiration"></div>
+                    <div class="service-content">
+                        <h3>AI Couple Portraits – Valentine's Special</h3>
+                        <p>Turn your favorite photo into a timeless, romantic illustration.</p>
+                        <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DAI%252520couple%252520portrait%252520from%252520photo%2526source%253Dmain_banner%2526ref_ctx_id%253D38ffee564647448784bcdea24b39a4a3%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dai%252520couple%252520portrait%252520from%252520photo" class="service-link">View Service →</a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+
+                    <div class="service-image"> <img src="https://ik.imagekit.io/yajnesh/new%20file%20poster" alt="Personalized Valentine Poster"></div>
+                    <div class="service-content">
+                        <h3>Personalized Valentine Posters &amp; Digital Gifts</h3>
+                        <p>Custom name-based posters and designs — meaningful gifts made personal.</p>
+                        <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DPersonalized%252520valentine%252520poster%2526source%253Dtop-bar%2526ref_ctx_id%253Db794c76034e0469c876841d8756fd99c%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dpersonalized%252520valentine%252520poster" class="service-link">View Service →</a>
+                    </div>
+               
+                </div>
+                 <!-- Service 1 -->
+                <div class="service-card">
+                     <div class="service-image"> <img src="https://ik.imagekit.io/yajnesh/elsa-noblet-5KD5PmZEfcg-unsplash%20(1).jpg" alt="AI Logo Design"></div>
+                   
+                    <div class="service-content">
+                        <h3>AI Logo Design &amp; Brand Identity</h3>
+                        <p>Professional logo and brand kits created with AI-assisted design and expert creativity.</p>
+                        <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DAI%252520logo%252520design%252520with%252520brand%252520kit%2526source%253Dtop-bar%2526ref_ctx_id%253Dd19fa1aa2de44270bea0875476e963d0%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dai%252520logo%252520design%252520with%252520brand%252520kit" class="service-link">View Service →</a>
+                    </div>
+                </div>
+
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                  <div class="service-image"> <img src="https://ik.imagekit.io/yajnesh/mariia-shalabaieva-HBkpnDVc_Ic-unsplash.jpg" alt="Social Media Graphics"></div>
+                    
+                    <div class="service-content">
+                        <h3>Social Media Graphics &amp; Marketing Visuals</h3>
+                        <p>Scroll-stopping Instagram, Pinterest, and business visuals designed for growth.</p>
+                        <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DSocial%252520media%252520graphics%252520design%252520for%252520business%2526source%253Dtop-bar%2526ref_ctx_id%253D0de2ed34927a4a4db53d2c66eead5486%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dsocial%252520media%252520graphics%252520design%252520for%252520business" class="service-link">View Service →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Love This Approach -->
+    <section class="why-love" id="why">
+        <div class="container">
+            <div class="why-love-content">
+                <h2>Why People Love This Approach</h2>
+                <ul class="features-list">
+                    <li>No AI tools to learn — experts handle the complexity</li>
+                    <li>Curated quality, not endless scrolling</li>
+                    <li>Faster than DIY design and creation</li>
+                    <li>Personal, emotional, and professional</li>
+                    <li>Ideal for meaningful gifts and growing brands</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valentine's Feature -->
+    <section class="valentine-section" id="valentine">
+        <div class="container">
+            <div class="valentine-content">
+                <h2>Valentine's Day is About Meaning</h2>
+                <p>Not generic gifts. Discover personalized creative gifts that feel thoughtful and unique.</p>
+                <button class="btn" onclick="scrollToSection('services')">View Valentine's Picks</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Design That Feels Intentional.</h2>
+            <p>Whether you're building a brand or gifting something meaningful, the right visuals matter.</p>
+            <button class="btn" onclick="scrollToSection('services')">Browse Curated Services</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CosmicAesthetix</h4>
+                    <p>CosmicAesthetix curates and recommends professional creative services. We are not the service provider.</p>
+                </div>
+                <div class="footer-section" id="disclaimer">
+                    <h4>Disclaimer</h4>
+                    <p>This site contains affiliate links. If you click and make a purchase, we may earn a commission at no extra cost to you.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CosmicAesthetix. All rights reserved. | Affiliate Discovery Platform</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
